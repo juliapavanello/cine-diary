@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CineDiary</string>
+
+    <!-- Boas-vindas -->
+    <string name="welcome_titulo">Comece sua jornada cinematográfica.</string>
+    <string name="welcome_subtitulo">Conecte-se com quem ama cinema como você.</string>
+    <string name="entrar">Entrar</string>
+    <string name="ou_criar_conta">Ou Criar Conta</string>
+
+    <!-- Login -->
+    <string name="voltar">Voltar</string>
+    <string name="login_titulo">Bem-vindo de volta!</string>
+    <string name="login_subtitulo">A história continua. Aperte o play.</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="manter_conectado">Manter conectado</string>
+    <string name="esqueci_senha">Esqueceu sua senha?</string>
+
+    <!-- Main -->
+    <string name="sair">Sair</string>
+</resources>

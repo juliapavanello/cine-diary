@@ -1,0 +1,26 @@
+<resources>
+    <style name="Theme.CineDiary" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/preto</item>
+        <item name="colorOnPrimary">@color/branco</item>
+        <item name="android:windowBackground">@color/fundo_escuro</item>
+    </style>
+
+    <!-- Card da imagem: só o canto inferior direito arredondado -->
+    <style name="Forma.CantoInferiorDireito" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">56dp</item>
+    </style>
+
+    <!-- Campos com só a linha embaixo, sobre fundo escuro -->
+    <style name="Campo.Linha" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxStrokeColor">@color/selector_linha_campo</item>
+        <item name="android:textColorHint">@color/cinza_texto</item>
+        <item name="hintTextColor">@color/branco</item>
+        <item name="boxCollapsedPaddingTop">4dp</item>
+        <item name="android:paddingStart">0dp</item>
+    </style>
+</resources>
