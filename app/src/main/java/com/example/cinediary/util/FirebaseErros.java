@@ -6,6 +6,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 /** Traduz as exceções do Firebase Auth para mensagens em português. */
 public final class FirebaseErros {
@@ -26,6 +27,10 @@ public final class FirebaseErros {
             return "Sem conexão com a internet.";
         if (e instanceof FirebaseTooManyRequestsException)
             return "Muitas tentativas. Aguarde um pouco e tente de novo.";
+        if (e instanceof FirebaseFirestoreException
+                && ((FirebaseFirestoreException) e).getCode()
+                   == FirebaseFirestoreException.Code.PERMISSION_DENIED)
+            return "Sem permissão para salvar os dados (confira as regras do Firestore).";
         return "Não foi possível concluir. Tente novamente.";
     }
 }

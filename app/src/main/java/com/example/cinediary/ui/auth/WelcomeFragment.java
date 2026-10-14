@@ -6,7 +6,6 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -85,7 +84,8 @@ public class WelcomeFragment extends Fragment {
                         .navigate(R.id.action_welcome_to_login));
 
         view.findViewById(R.id.txtCriarConta).setOnClickListener(v ->
-                Toast.makeText(requireContext(), "Tela de cadastro: próximo passo", Toast.LENGTH_SHORT).show());
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_welcome_to_cadastro));
 
         // Afasta o painel inferior da barra de navegação do sistema (edge-to-edge)
         View painel = view.findViewById(R.id.painelInferior);

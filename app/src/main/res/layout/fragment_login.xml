@@ -62,51 +62,62 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilEmail"
-                style="@style/Campo.Linha"
+                style="@style/Campo.Claro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email">
+                android:hint="@string/email"
+                android:textColorHint="@color/cinza_linha"
+                app:boxBackgroundColor="@color/campo_fundo"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:cursorColor="@color/preto"
+                app:hintTextColor="@color/preto">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:paddingStart="0dp"
-                    android:textColor="@color/branco"
-                    android:textSize="14sp" />
+                    android:textColor="@color/preto"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilSenha"
-                style="@style/Campo.Linha"
+                style="@style/Campo.Claro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 android:hint="@string/senha"
+                android:textColorHint="@color/cinza_linha"
+                app:boxBackgroundColor="@color/campo_fundo"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:cursorColor="@color/preto"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/branco">
+                app:endIconTint="@color/preto"
+                app:hintTextColor="@color/preto">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtSenha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:paddingStart="0dp"
-                    android:textColor="@color/branco"
-                    android:textSize="14sp" />
+                    android:textColor="@color/preto"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <CheckBox
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/chkManterConectado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-6dp"
                 android:layout_marginTop="8dp"
-                android:buttonTint="@color/branco"
                 android:text="@string/manter_conectado"
                 android:textColor="@color/branco"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                app:buttonTint="@color/branco"
+                app:buttonIconTint="@color/preto" />
 
             <FrameLayout
                 android:layout_width="match_parent"

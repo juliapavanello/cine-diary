@@ -16,6 +16,21 @@
     <string name="manter_conectado">Manter conectado</string>
     <string name="esqueci_senha">Esqueceu sua senha?</string>
 
+    <!-- Cadastro -->
+    <string name="cadastro_titulo">Crie sua conta</string>
+    <string name="cadastro_subtitulo">Seu próximo filme favorito começa aqui.</string>
+    <string name="nome">Nome</string>
+    <string name="confirmar_senha">Confirmar senha</string>
+    <string name="senha_minimo">Mínimo de 6 caracteres</string>
+    <string name="criar_conta">Criar conta</string>
+    <string name="ja_tem_conta">Já tem uma conta? Entrar</string>
+    <string name="foto_perfil">Foto de perfil</string>
+    <string name="adicionar_foto">Adicionar foto (opcional)</string>
+    <string name="alterar_foto">Alterar foto</string>
+    <string name="tirar_foto">Tirar foto</string>
+    <string name="escolher_galeria">Escolher da galeria</string>
+    <string name="remover_foto">Remover foto</string>
+
     <!-- Main -->
     <string name="sair">Sair</string>
 </resources>

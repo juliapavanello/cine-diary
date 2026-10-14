@@ -6,58 +6,50 @@
     android:layout_height="match_parent"
     android:background="@color/cinza_claro">
 
-    <!-- Imagem com o canto inferior direito arredondado -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardImagem"
+    <!-- Área da imagem: o arredondamento é feito em cada ImageView (item_carrossel) -->
+    <FrameLayout
+        android:id="@+id/areaImagem"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:cardElevation="0dp"
-        app:strokeWidth="0dp"
-        app:shapeAppearanceOverlay="@style/Forma.CantoInferiorDireito"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/painelInferior">
 
-        <FrameLayout
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pagerCarrossel"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" />
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/pagerCarrossel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="64dp"
+            android:text="@string/welcome_titulo"
+            android:textColor="@color/preto"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginBottom="64dp"
-                android:text="@string/welcome_titulo"
-                android:textColor="@color/preto"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabDots"
-                android:layout_width="wrap_content"
-                android:layout_height="16dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="20dp"
-                android:layout_marginBottom="16dp"
-                android:background="@android:color/transparent"
-                app:tabBackground="@drawable/selector_dot"
-                app:tabGravity="start"
-                app:tabIndicatorHeight="0dp"
-                app:tabMaxWidth="14dp"
-                app:tabMinWidth="14dp"
-                app:tabMode="fixed"
-                app:tabPaddingEnd="0dp"
-                app:tabPaddingStart="0dp"
-                app:tabRippleColor="@null" />
-        </FrameLayout>
-    </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabDots"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            app:tabBackground="@drawable/selector_dot"
+            app:tabGravity="start"
+            app:tabIndicatorHeight="0dp"
+            app:tabMaxWidth="14dp"
+            app:tabMinWidth="14dp"
+            app:tabMode="fixed"
+            app:tabPaddingEnd="0dp"
+            app:tabPaddingStart="0dp"
+            app:tabRippleColor="@null" />
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/painelInferior"

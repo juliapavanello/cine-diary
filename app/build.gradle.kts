@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
     implementation("com.google.firebase:firebase-auth")
-
+    implementation("com.google.firebase:firebase-firestore")
     implementation("androidx.navigation:navigation-fragment:2.9.0")
     implementation("androidx.navigation:navigation-ui:2.9.0")
     implementation("androidx.viewpager2:viewpager2:1.1.0")

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ViewPager2 exige match_parent nos itens -->
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- ViewPager2 exige match_parent nos itens.
+     ShapeableImageView recorta a própria imagem com o canto inferior direito arredondado. -->
+<com.google.android.material.imageview.ShapeableImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/imgCarrossel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:contentDescription="@null"
-    android:scaleType="centerCrop" />
+    android:scaleType="centerCrop"
+    app:shapeAppearanceOverlay="@style/Forma.CantoInferiorDireito" />

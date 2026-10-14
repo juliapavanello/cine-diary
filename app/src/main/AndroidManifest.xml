@@ -26,5 +26,16 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />
+
+        <!-- Dá ao app de câmera um local para salvar a foto de perfil -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 </manifest>

@@ -7,7 +7,7 @@ package com.example.cinediary.ui.auth;
 public class AuthState {
 
     public enum Status { CARREGANDO, SUCESSO, ERRO, EMAIL_ENVIADO }
-    public enum Campo { NENHUM, EMAIL, SENHA }
+    public enum Campo { NENHUM, NOME, EMAIL, SENHA, CONFIRMAR_SENHA }
 
     public final Status status;
     public final Campo campo;

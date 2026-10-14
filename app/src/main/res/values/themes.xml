@@ -14,13 +14,24 @@
         <item name="cornerSizeBottomRight">56dp</item>
     </style>
 
-    <!-- Campos com só a linha embaixo, sobre fundo escuro -->
-    <style name="Campo.Linha" parent="Widget.Material3.TextInputLayout.FilledBox">
-        <item name="boxBackgroundColor">@android:color/transparent</item>
-        <item name="boxStrokeColor">@color/selector_linha_campo</item>
-        <item name="android:textColorHint">@color/cinza_texto</item>
-        <item name="hintTextColor">@color/branco</item>
-        <item name="boxCollapsedPaddingTop">4dp</item>
-        <item name="android:paddingStart">0dp</item>
+    <!-- Avatar redondo -->
+    <style name="Forma.Circulo" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Campos: caixa branca com texto preto -->
+    <style name="Campo.Claro" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/campo_fundo</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="android:textColorHint">@color/cinza_linha</item>
+        <item name="hintTextColor">@color/preto</item>
+        <item name="cursorColor">@color/preto</item>
+        <item name="endIconTint">@color/preto</item>
     </style>
 </resources>

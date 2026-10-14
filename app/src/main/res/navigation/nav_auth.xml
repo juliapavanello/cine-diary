@@ -14,11 +14,31 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_welcome_to_cadastro"
+            app:destination="@id/cadastroFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.cinediary.ui.auth.LoginFragment" />
 
-    <!-- Próximo: cadastroFragment -->
+    <fragment
+        android:id="@+id/cadastroFragment"
+        android:name="com.example.cinediary.ui.auth.CadastroFragment">
+        <!-- "Já tem uma conta? Entrar": troca cadastro por login (voltar leva às boas-vindas) -->
+        <action
+            android:id="@+id/action_cadastro_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/cadastroFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 </navigation>
