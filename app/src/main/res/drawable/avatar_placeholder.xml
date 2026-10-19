@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/cinza_claro" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_pessoa"
+        android:left="22dp" android:top="22dp"
+        android:right="22dp" android:bottom="22dp" />
+</layer-list>
