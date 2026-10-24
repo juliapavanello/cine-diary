@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp" android:height="235dp" android:viewportWidth="320" android:viewportHeight="235">
+    <path android:fillColor="#07151B" android:pathData="M0,0h320v235H0z" />
+    <path android:fillColor="#0B2833" android:pathData="M0,0h320v95L0,142z" />
+    <path android:fillColor="#103341" android:pathData="M0,35L26,10 42,47 64,6 83,53 105,19 127,74 151,23 177,71 203,10 229,54 250,16 275,68 298,12 320,44v191H0z" />
+    <path android:fillColor="#071017" android:pathData="M0,98L22,27 41,98 52,58 74,120 91,61 115,136 131,63 152,123 171,52 194,111 218,38 242,106 262,56 284,119 305,44 320,97v138H0z" />
+    <path android:fillColor="#172D35" android:pathData="M182,0h138v235H182z" />
+    <path android:fillColor="#1F434D" android:pathData="M197,0h8v235h-8zM238,0h4v235h-4zM287,0h6v235h-6z" />
+    <path android:fillColor="#A2C7CD" android:pathData="M248,23a22,22 0,1 0,44 0a22,22 0,1 0,-44 0" />
+    <path android:fillColor="#0A1118" android:pathData="M0,189L22,114 38,181 58,104 79,192 98,133 119,200 143,116 160,181 180,119 201,185 224,115 248,194 270,117 292,184 320,119v116H0z" />
+    <!-- Silhueta de um personagem original de terror, sem representar uma pessoa real -->
+    <path android:fillColor="#05080D" android:pathData="M224,90c-8,0 -13,7 -13,15v12l-9,19 7,4 12,-16 6,1 -3,21 -15,28 7,4 17,-24 5,24 8,0 -1,-33 -1,-23 8,16 6,-3 -11,-26 -3,-14c-2,-4 -7,-5 -13,-4z" />
+    <path android:fillColor="#D2DDE0" android:pathData="M214,91c2,-10 20,-12 25,0l-2,14 -20,0z" />
+    <path android:fillColor="#263C46" android:pathData="M216,96l5,2 -3,4 -4,-2zM226,96l5,2 -3,4 -4,-2zM235,96l3,2 -2,4 -3,-2z" />
+    <path android:fillColor="#0D171E" android:pathData="M219,105h18l-1,7h-17z" />
+    <path android:fillColor="#0A1118" android:pathData="M215,115l-8,20 -12,13 5,4 17,-12 7,-16zM238,116l10,18 15,10 -3,5 -20,-8 -13,-18z" />
+    <path android:fillColor="#03070B" android:pathData="M218,145l-6,34 -9,27 7,3 14,-27 5,-25 4,25 9,25 7,-2 -5,-31 -5,-32z" />
+    <path android:fillColor="#D2DDE0" android:pathData="M0,218h320v17H0z" android:fillAlpha="0.08" />
+</vector>

@@ -1,22 +1,17 @@
+
 package com.example.cinediary.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import com.example.cinediary.R;
 import com.example.cinediary.data.local.SessionPrefs;
 import com.example.cinediary.ui.auth.AuthActivity;
+import com.example.cinediary.ui.home.HomeFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
-/**
- * Placeholder da área logada, só para testar o login.
- * Próximo passo: trocar por BottomNavigationView + Fragments (Home, Busca, Perfil...).
- */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,15 +19,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
-        TextView txt = findViewById(R.id.txtOla);
-        txt.setText(usuario != null ? "Logada como " + usuario.getEmail() : "Sem sessão");
+        // Exibe a tela inicial do CineDiary
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragmentContainer, new HomeFragment())
+                    .commit();
+        }
 
+        // Mantém o funcionamento do logout
         findViewById(R.id.btnSair).setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
             new SessionPrefs(this).limpar();
+
             Intent i = new Intent(this, AuthActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.setFlags(
+                    Intent.FLAG_ACTIVITY_NEW_TASK |
+                            Intent.FLAG_ACTIVITY_CLEAR_TASK
+            );
+
             startActivity(i);
         });
     }

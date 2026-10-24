@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="98dp"
+    android:layout_marginBottom="9dp">
+
+    <TextView
+        android:id="@+id/tvFavoriteRank"
+        android:layout_width="54dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|start"
+        android:includeFontPadding="false"
+        android:text="1"
+        android:textColor="#C749F4"
+        android:textSize="66sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="26dp"
+        android:background="@drawable/bg_profile_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="7dp">
+
+        <ImageView
+            android:id="@+id/ivFavoritePoster"
+            android:layout_width="58dp"
+            android:layout_height="76dp"
+            android:background="#1A111A"
+            android:contentDescription="Pôster do filme favorito"
+            android:scaleType="fitXY"
+            android:src="@drawable/poster_conjuring" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFavoriteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Invocação do mal"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvFavoriteGenres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Terror   Horror   Mistério"
+                android:textColor="#E6B3FF"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/tvFavoriteMeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="◷  2h 07min  •  2013\n◉  Já assistido"
+                android:textColor="#C0B7C5"
+                android:textSize="7sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFavoriteRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="4dp"
+            android:gravity="center"
+            android:text="★★★★★"
+            android:textColor="#D044F5"
+            android:textSize="13sp" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0B0E"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="28dp">
+
+        <!-- Capa e identificação do perfil -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="226dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Arte de capa com tema de terror"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_cover_art" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_profile_cover_overlay" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:gravity="center"
+                    android:text="☰"
+                    android:textColor="#FFFFFF"
+                    android:textSize="21sp"
+                    android:contentDescription="Menu" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:gravity="center"
+                    android:text="⋯"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    android:contentDescription="Mais opções" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="13dp">
+
+                <ImageView
+                    android:id="@+id/ivProfileAvatar"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="#17131A"
+                    android:contentDescription="Foto de perfil"
+                    android:padding="2dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_avatar_mask" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jason Maio"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProfileBio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:text="Amante de filmes de terror, gosto de pânico, halloween entre outros..."
+                        android:textColor="#E7DFE9"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="16dp">
+
+            <!-- Filme favorito -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Filme favorito"
+                android:textColor="#F8F4FA"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="88dp"
+                    android:layout_height="124dp"
+                    android:background="#17131A"
+                    android:contentDescription="Pôster ilustrativo de Friday 13th"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/poster_friday" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFavoriteMovieTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Friday 13th"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvFavoriteMovieDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="4"
+                        android:text="Cinco anos após o massacre no acampamento Crystal Lake, um novo grupo de jovens chega à região para uma..."
+                        android:textColor="#D9D0DD"
+                        android:textSize="10sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_profile_pill"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="9dp"
+                        android:paddingEnd="9dp">
+
+                        <TextView
+                            android:id="@+id/tvFavoriteMoviePopularity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="●  10,2 mil"
+                            android:textColor="#FFFFFF"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvFavoriteMovieRating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="end"
+                        android:text="★★★★★"
+                        android:textColor="#D044F5"
+                        android:textSize="19sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Filmes em destaque -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Filmes em destaque"
+                android:textColor="#F8F4FA"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:contentDescription="Pôster ilustrativo de Pânico"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/poster_panic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center"
+                        android:text="Pânico"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="★★★★★"
+                        android:textColor="#C842F2"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:contentDescription="Pôster ilustrativo de A Hora do Pesadelo"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/poster_nightmare" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center"
+                        android:text="Hora do Pesadelo"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="★★★☆☆"
+                        android:textColor="#C842F2"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:contentDescription="Pôster ilustrativo de Halloween"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/poster_halloween" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center"
+                        android:text="Halloween"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="★★★★☆"
+                        android:textColor="#C842F2"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Lista de favoritos + filtro ilustrativo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lista de favoritos"
+                    android:textColor="#F8F4FA"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:background="@drawable/bg_profile_filter"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Filmes   ⌄"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/favoritesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:orientation="vertical">
+
+                <!-- Exemplos visíveis na prévia do Android Studio.
+                     O Java substitui esses itens pelos dados mockados durante a execução. -->
+                <include layout="@layout/item_profile_favorite" />
+                <include layout="@layout/item_profile_favorite" />
+                <include layout="@layout/item_profile_favorite" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
