@@ -52,12 +52,11 @@
             android:clipToOutline="true">
 
             <ImageView
-                android:layout_width="190dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="end|center_vertical"
-                android:contentDescription="@null"
-                android:scaleType="fitXY"
-                android:src="@drawable/art_banner_duna" />
+                android:contentDescription="Banner de Duna: Parte Dois"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner_duna" />
 
             <LinearLayout
                 android:layout_width="160dp"
