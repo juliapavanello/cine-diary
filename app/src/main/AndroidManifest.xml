@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Área logada (aqui vai entrar a Bottom Navigation) -->
+        <!-- Área logada com Navigation Drawer -->
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />

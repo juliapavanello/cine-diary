@@ -45,6 +45,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("androidx.navigation:navigation-fragment:2.9.0")
     implementation("androidx.navigation:navigation-ui:2.9.0")
+    implementation("androidx.drawerlayout:drawerlayout:1.2.0")
     implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
