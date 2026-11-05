@@ -33,4 +33,20 @@
 
     <!-- Main -->
     <string name="sair">Sair</string>
+
+    <!-- Detalhes do filme -->
+    <string name="detalhes_sinopse">Sinopse</string>
+    <string name="detalhes_elenco">Elenco</string>
+    <string name="detalhes_sem_sinopse">Sinopse ainda não disponível em português.</string>
+    <string name="detalhes_nota_tmdb">TMDB</string>
+    <string name="detalhes_avaliacoes">Avaliações</string>
+    <string name="detalhes_popularidade">Popularidade</string>
+    <string name="detalhes_generos">Gêneros</string>
+    <string name="detalhes_onde_assistir">Onde assistir</string>
+    <string name="detalhes_sem_streaming">Não disponível em streaming no Brasil.</string>
+    <string name="detalhes_reviews">Reviews</string>
+    <string name="detalhes_sem_reviews">Ainda não há reviews para este título.</string>
+    <string name="detalhes_ler_mais">Ler mais</string>
+    <string name="detalhes_ler_menos">Ler menos</string>
+    <string name="tentar_novamente">Tentar novamente</string>
 </resources>

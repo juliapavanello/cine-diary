@@ -30,6 +30,8 @@ import retrofit2.Response;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.cinediary.R;
+import com.example.cinediary.ui.detalhes.DetalhesFragment;
+import com.example.cinediary.ui.main.MainActivity;
 
 import com.example.cinediary.data.remote.tmdb.TmdbCache;
 import com.example.cinediary.data.remote.tmdb.TmdbUpdateScheduler;
@@ -250,8 +252,16 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    /** Abre a tela do filme/série pela MainActivity. */
+    private void abrirDetalhes(int id, String tipo) {
+        if (requireActivity() instanceof MainActivity) {
+            ((MainActivity) requireActivity()).abrirDetalhes(id, tipo);
+        }
+    }
+
     private void addTrendTmdb(LinearLayout container, TmdbMovie filme) {
         LinearLayout card = new LinearLayout(requireContext());
+        card.setOnClickListener(v -> abrirDetalhes(filme.getId(), DetalhesFragment.TIPO_FILME));
         card.setOrientation(LinearLayout.VERTICAL);
 
         LinearLayout.LayoutParams cardParams =
@@ -326,9 +336,11 @@ public class HomeFragment extends Fragment {
     private void addRankingTmdb(
             LinearLayout container,
             int rank,
-            TmdbMovie filme
+            TmdbMovie filme,
+            String tipo
     ) {
         FrameLayout tile = new FrameLayout(requireContext());
+        tile.setOnClickListener(v -> abrirDetalhes(filme.getId(), tipo));
 
         LinearLayout.LayoutParams tileParams =
                 new LinearLayout.LayoutParams(dp(176), dp(135));
@@ -402,7 +414,7 @@ public class HomeFragment extends Fragment {
 
         if (filmes != null) {
             for (int i = 0; i < Math.min(10, filmes.size()); i++) {
-                addRankingTmdb(topMovies, i + 1, filmes.get(i));
+                addRankingTmdb(topMovies, i + 1, filmes.get(i), DetalhesFragment.TIPO_FILME);
             }
         }
 
@@ -415,7 +427,7 @@ public class HomeFragment extends Fragment {
 
         if (series != null) {
             for (int i = 0; i < Math.min(10, series.size()); i++) {
-                addRankingTmdb(topSeries, i + 1, series.get(i));
+                addRankingTmdb(topSeries, i + 1, series.get(i), DetalhesFragment.TIPO_SERIE);
             }
         }
 

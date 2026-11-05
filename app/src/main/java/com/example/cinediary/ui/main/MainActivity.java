@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.example.cinediary.R;
 import com.example.cinediary.data.local.SessionPrefs;
 import com.example.cinediary.ui.auth.AuthActivity;
+import com.example.cinediary.ui.detalhes.DetalhesFragment;
 import com.example.cinediary.ui.home.HomeFragment;
 import com.example.cinediary.ui.profile.ProfileFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -58,6 +59,40 @@ public class MainActivity extends AppCompatActivity {
         }
 
         configurarBotaoVoltar();
+
+        // Troca o ícone da toolbar (menu <-> voltar) quando entra/sai da tela do filme
+        getSupportFragmentManager().addOnBackStackChangedListener(this::atualizarToolbar);
+        atualizarToolbar();
+    }
+
+    /** Abre a tela do filme/série. tipo = DetalhesFragment.TIPO_FILME ou TIPO_SERIE. */
+    public void abrirDetalhes(int id, String tipo) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .setCustomAnimations(
+                        android.R.anim.fade_in, android.R.anim.fade_out,
+                        android.R.anim.fade_in, android.R.anim.fade_out)
+                .replace(R.id.fragmentContainer, DetalhesFragment.novaInstancia(id, tipo))
+                .addToBackStack("detalhes")
+                .commit();
+    }
+
+    private void atualizarToolbar() {
+        boolean emDetalhes = getSupportFragmentManager().getBackStackEntryCount() > 0;
+
+        if (emDetalhes) {
+            toolbar.setNavigationIcon(R.drawable.ic_seta_voltar_branca);
+            toolbar.setNavigationContentDescription("Voltar");
+            toolbar.setNavigationOnClickListener(v -> getSupportFragmentManager().popBackStack());
+            toolbar.setTitle("Detalhes");
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        } else {
+            toolbar.setNavigationIcon(R.drawable.ic_menu);
+            toolbar.setNavigationContentDescription("Abrir menu");
+            toolbar.setNavigationOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
+            atualizarTitulo(destinoAtual);
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+        }
     }
 
     private boolean onItemSelecionado(@NonNull MenuItem item) {
@@ -131,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
             public void handleOnBackPressed() {
                 if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START);
+                } else if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                    getSupportFragmentManager().popBackStack();
                 } else if (destinoAtual != R.id.nav_home) {
                     mostrarHome();
                 } else {

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_escuro"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/conteudoDetalhes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <!-- Imagem de fundo com degradê -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp">
+
+                <ImageView
+                    android:id="@+id/imgBackdrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_gradiente_backdrop" />
+            </FrameLayout>
+
+            <!-- Pôster + título -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-64dp"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imgPoster"
+                    android:layout_width="96dp"
+                    android:layout_height="140dp"
+                    android:contentDescription="@null"
+                    android:elevation="6dp"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/Forma.Poster" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:textColor="@color/branco"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtMeta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:textColor="@color/cinza_claro"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Notas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
+
+                <LinearLayout style="@style/Detalhes.ColunaNota">
+                    <TextView style="@style/Detalhes.RotuloNota" android:text="@string/detalhes_nota_tmdb" />
+                    <TextView android:id="@+id/txtNotaTmdb" style="@style/Detalhes.ValorNota"
+                        android:textColor="@color/roxo" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/Detalhes.ColunaNota">
+                    <TextView style="@style/Detalhes.RotuloNota" android:text="@string/detalhes_avaliacoes" />
+                    <TextView android:id="@+id/txtAvaliacoes" style="@style/Detalhes.ValorNota" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/Detalhes.ColunaNota">
+                    <TextView style="@style/Detalhes.RotuloNota" android:text="@string/detalhes_popularidade" />
+                    <TextView android:id="@+id/txtPopularidade" style="@style/Detalhes.ValorNota" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtTagline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/branco"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txtSinopse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="3dp"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/cinza_claro"
+                android:textSize="14sp" />
+
+            <!-- Gêneros -->
+            <TextView
+                style="@style/Detalhes.TituloSecao"
+                android:text="@string/detalhes_generos" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:paddingHorizontal="20dp"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipsGeneros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipSpacingHorizontal="8dp"
+                    app:singleLine="true" />
+            </HorizontalScrollView>
+
+            <!-- Onde assistir -->
+            <TextView
+                style="@style/Detalhes.TituloSecao"
+                android:text="@string/detalhes_onde_assistir" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProvedores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:paddingHorizontal="14dp" />
+
+            <TextView
+                android:id="@+id/txtSemProvedores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="20dp"
+                android:text="@string/detalhes_sem_streaming"
+                android:textColor="@color/cinza_texto"
+                android:textSize="13sp"
+                android:visibility="gone" />
+
+            <!-- Elenco -->
+            <TextView
+                android:id="@+id/txtTituloElenco"
+                style="@style/Detalhes.TituloSecao"
+                android:text="@string/detalhes_elenco" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvElenco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:paddingHorizontal="15dp" />
+
+            <!-- Reviews -->
+            <TextView
+                style="@style/Detalhes.TituloSecao"
+                android:text="@string/detalhes_reviews" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvReviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"
+                android:paddingHorizontal="20dp" />
+
+            <TextView
+                android:id="@+id/txtSemReviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="20dp"
+                android:text="@string/detalhes_sem_reviews"
+                android:textColor="@color/cinza_texto"
+                android:textSize="13sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressoDetalhes"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/roxo"
+        android:visibility="gone" />
+
+    <!-- Erro com botão de tentar de novo -->
+    <LinearLayout
+        android:id="@+id/layoutErro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtErro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/branco"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTentarNovamente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/cinza_claro"
+            android:text="@string/tentar_novamente"
+            android:textAllCaps="false"
+            android:textColor="@color/preto"
+            app:cornerRadius="6dp" />
+    </LinearLayout>
+</FrameLayout>
