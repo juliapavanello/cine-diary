@@ -347,19 +347,15 @@
                     android:textSize="10sp" />
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/favoritesContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
-                android:orientation="vertical">
-
-                <!-- Exemplos visíveis na prévia do Android Studio.
-                     O Java substitui esses itens pelos dados mockados durante a execução. -->
-                <include layout="@layout/item_profile_favorite" />
-                <include layout="@layout/item_profile_favorite" />
-                <include layout="@layout/item_profile_favorite" />
-            </LinearLayout>
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_profile_favorite" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

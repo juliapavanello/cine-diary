@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="104dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="12dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivTrendingPoster"
+        android:layout_width="104dp"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_poster_duna"
+        android:contentDescription="Pôster do filme"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tvTrendingTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#F6F1F7"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTrendingRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="#D94BFF"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+</LinearLayout>

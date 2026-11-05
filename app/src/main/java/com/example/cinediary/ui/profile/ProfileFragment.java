@@ -4,23 +4,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cinediary.R;
 
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Tela visual de perfil do CineDiary.
- * Os dados abaixo são mockados e podem ser substituídos por dados do Firestore depois.
- */
+/** Tela visual de perfil do CineDiary. */
 public class ProfileFragment extends Fragment {
 
     private static final ProfileMockData PROFILE = new ProfileMockData(
@@ -32,10 +29,13 @@ public class ProfileFragment extends Fragment {
             "★★★★★"
     );
 
-    private static final List<FavoriteItem> MOCK_FAVORITES = Arrays.asList(
-            new FavoriteItem(1, "Invocação do mal", "Terror   Horror   Mistério", "2h 07min  •  2013\nJá assistido", "★★★★★", R.drawable.poster_conjuring),
-            new FavoriteItem(2, "A Hora do Pesadelo", "Terror   Sobrenatural", "1h 31min  •  1984\nJá assistido", "★★★★☆", R.drawable.poster_nightmare),
-            new FavoriteItem(3, "Friday 13th", "Terror   Suspense", "1h 35min  •  1980\nJá assistido", "★★★★★", R.drawable.poster_friday)
+    private static final List<FavoriteMovie> MOCK_FAVORITES = Arrays.asList(
+            new FavoriteMovie(1, "Invocação do mal", "Terror   Horror   Mistério",
+                    "2h 07min  •  2013\nJá assistido", "★★★★★", R.drawable.poster_conjuring),
+            new FavoriteMovie(2, "A Hora do Pesadelo", "Terror   Sobrenatural",
+                    "1h 31min  •  1984\nJá assistido", "★★★★☆", R.drawable.poster_nightmare),
+            new FavoriteMovie(3, "Friday 13th", "Terror   Suspense",
+                    "1h 35min  •  1980\nJá assistido", "★★★★★", R.drawable.poster_friday)
     );
 
     public ProfileFragment() {
@@ -54,39 +54,20 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Preenche os dados simples do perfil a partir do objeto de exemplo.
         ((TextView) view.findViewById(R.id.tvProfileName)).setText(PROFILE.name);
         ((TextView) view.findViewById(R.id.tvProfileBio)).setText(PROFILE.bio);
         ((TextView) view.findViewById(R.id.tvFavoriteMovieTitle)).setText(PROFILE.favoriteMovieTitle);
-        ((TextView) view.findViewById(R.id.tvFavoriteMovieDescription)).setText(PROFILE.favoriteMovieDescription);
-        ((TextView) view.findViewById(R.id.tvFavoriteMovieRating)).setText(PROFILE.favoriteMovieRating);
+        ((TextView) view.findViewById(R.id.tvFavoriteMovieDescription))
+                .setText(PROFILE.favoriteMovieDescription);
+        ((TextView) view.findViewById(R.id.tvFavoriteMovieRating))
+                .setText(PROFILE.favoriteMovieRating);
         ((TextView) view.findViewById(R.id.tvFavoriteMoviePopularity))
                 .setText("●  " + PROFILE.favoriteMoviePopularity);
 
-        renderFavorites(view);
-    }
-
-    /**
-     * Substitui as linhas-exemplo do XML por linhas montadas com dados fixos.
-     * O XML mantém os exemplos para que a tela também seja visível na prévia do editor.
-     */
-    private void renderFavorites(@NonNull View root) {
-        LinearLayout container = root.findViewById(R.id.favoritesContainer);
-        container.removeAllViews();
-
-        LayoutInflater inflater = LayoutInflater.from(requireContext());
-        for (FavoriteItem item : MOCK_FAVORITES) {
-            View row = inflater.inflate(R.layout.item_profile_favorite, container, false);
-
-            ((TextView) row.findViewById(R.id.tvFavoriteRank)).setText(String.valueOf(item.position));
-            ((ImageView) row.findViewById(R.id.ivFavoritePoster)).setImageResource(item.posterResource);
-            ((TextView) row.findViewById(R.id.tvFavoriteTitle)).setText(item.title);
-            ((TextView) row.findViewById(R.id.tvFavoriteGenres)).setText(item.genres);
-            ((TextView) row.findViewById(R.id.tvFavoriteMeta)).setText(item.metadata);
-            ((TextView) row.findViewById(R.id.tvFavoriteRating)).setText(item.rating);
-
-            container.addView(row);
-        }
+        RecyclerView favoritos = view.findViewById(R.id.favoritesContainer);
+        favoritos.setLayoutManager(new LinearLayoutManager(requireContext()));
+        favoritos.setNestedScrollingEnabled(false);
+        favoritos.setAdapter(new FavoriteMoviesAdapter(MOCK_FAVORITES));
     }
 
     private static class ProfileMockData {
@@ -106,25 +87,6 @@ public class ProfileFragment extends Fragment {
             this.favoriteMovieDescription = favoriteMovieDescription;
             this.favoriteMoviePopularity = favoriteMoviePopularity;
             this.favoriteMovieRating = favoriteMovieRating;
-        }
-    }
-
-    private static class FavoriteItem {
-        final int position;
-        final String title;
-        final String genres;
-        final String metadata;
-        final String rating;
-        final int posterResource;
-
-        FavoriteItem(int position, String title, String genres, String metadata,
-                     String rating, int posterResource) {
-            this.position = position;
-            this.title = title;
-            this.genres = genres;
-            this.metadata = metadata;
-            this.rating = rating;
-            this.posterResource = posterResource;
         }
     }
 }
